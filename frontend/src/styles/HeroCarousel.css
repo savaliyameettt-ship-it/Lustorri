@@ -1,0 +1,238 @@
+.hero-carousel {
+  min-height: 100vh;
+  padding: 8rem 3rem 6rem;
+  background-color: var(--ivory-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-carousel__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+  position: relative;
+}
+
+/* Hero Content */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-right: 3rem;
+}
+
+.hero-title {
+  font-family: var(--font-serif-primary);
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--mocha-brown);
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-serif-secondary);
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--mocha-light);
+  max-width: 500px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  border: none;
+}
+
+.btn--primary {
+  background-color: var(--lust-red);
+  color: var(--ivory-white);
+  border: 1px solid var(--lust-red);
+}
+
+.btn--primary:hover {
+  background-color: #6B0000;
+  box-shadow: 0 4px 16px rgba(139, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: var(--mocha-brown);
+  border: 1px solid var(--mocha-brown);
+}
+
+.btn--ghost:hover {
+  background-color: var(--mocha-brown);
+  color: var(--ivory-white);
+  transform: translateY(-2px);
+}
+
+/* Polaroid Stack */
+.polaroid-stack {
+  position: relative;
+  height: 600px;
+  width: 100%;
+}
+
+.polaroid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s ease, z-index 0.3s ease;
+  cursor: pointer;
+}
+
+.polaroid__frame {
+  background-color: #FAFAF8;
+  padding: 1rem;
+  padding-bottom: 3rem;
+  box-shadow: 0 8px 30px rgba(74, 55, 40, 0.15),
+              0 2px 8px rgba(74, 55, 40, 0.1);
+  width: 320px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.polaroid:hover .polaroid__frame {
+  box-shadow: 0 12px 40px rgba(74, 55, 40, 0.25),
+              0 4px 12px rgba(74, 55, 40, 0.15);
+  transform: scale(1.02);
+}
+
+.polaroid__image {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.polaroid__caption {
+  font-family: 'Segoe Script', 'Brush Script MT', cursive;
+  font-size: 0.95rem;
+  color: var(--mocha-brown);
+  margin-top: 1rem;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+/* Carousel Handles */
+.carousel-handle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 240, 0.9);
+  border: 1px solid var(--champagne-gold);
+  color: var(--champagne-gold);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(74, 55, 40, 0.1);
+}
+
+.carousel-handle:hover {
+  background-color: var(--champagne-gold);
+  color: var(--ivory-white);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+
+.carousel-handle--left {
+  left: -80px;
+}
+
+.carousel-handle--right {
+  right: -80px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1200px) {
+  .hero-carousel__container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .hero-content {
+    padding-right: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .polaroid-stack {
+    height: 500px;
+  }
+
+  .carousel-handle--left {
+    left: 10px;
+  }
+
+  .carousel-handle--right {
+    right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-carousel {
+    padding: 6rem 1.5rem 4rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .polaroid__frame {
+    width: 280px;
+  }
+
+  .polaroid__image {
+    height: 320px;
+  }
+
+  .carousel-handle {
+    width: 40px;
+    height: 40px;
+  }
+}
