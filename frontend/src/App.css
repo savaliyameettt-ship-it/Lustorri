@@ -1,34 +1,53 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+:root {
+  --champagne-gold: #D4AF37;
+  --lust-red: #8B0000;
+  --ivory-white: #FFFFF0;
+  --mocha-brown: #4A3728;
+  --mocha-light: #7A6858;
+  --champagne-wash: #F5EDD6;
+  
+  --font-serif-primary: 'Cormorant Garamond', serif;
+  --font-serif-secondary: 'Playfair Display', serif;
+  --font-sans: 'Montserrat', sans-serif;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+body {
+  font-family: var(--font-sans);
+  background-color: var(--ivory-white);
+  color: var(--mocha-brown);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App-link {
-    color: #61dafb;
+.App {
+  min-height: 100vh;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+main {
+  position: relative;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--champagne-gold);
+  color: var(--ivory-white);
+}
+
+::-moz-selection {
+  background-color: var(--champagne-gold);
+  color: var(--ivory-white);
 }
