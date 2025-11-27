@@ -77,7 +77,7 @@ const HeroCarousel = () => {
               style={{
                 zIndex: getZIndex(index),
                 transform: getTransform(index),
-                opacity: index === 0 ? 1 : 0.7
+                opacity: index === 0 ? 1 : index === 1 ? 0.95 : 0.85
               }}
               onMouseEnter={() => setHoveredId(moment.id)}
               onMouseLeave={() => setHoveredId(null)}
