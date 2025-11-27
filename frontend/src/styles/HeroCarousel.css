@@ -164,11 +164,11 @@
 }
 
 .carousel-handle--left {
-  left: -80px;
+  left: 20px;
 }
 
 .carousel-handle--right {
-  right: -80px;
+  right: 20px;
 }
 
 /* Mobile Responsive */
