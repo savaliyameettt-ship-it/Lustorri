@@ -45,25 +45,6 @@ const HeroCarousel = () => {
   return (
     <section className="hero-carousel">
       <div className="hero-carousel__container">
-        <div className="hero-content">
-          <h1 className="hero-title">
-            Jewelry for the moments
-            <br />
-            you never forget.
-          </h1>
-          <p className="hero-subtitle">
-            Every ring holds a story. Every story begins with a touch.
-          </p>
-          <div className="hero-buttons">
-            <button className="btn btn--primary">
-              Discover the rings
-            </button>
-            <button className="btn btn--ghost">
-              Read the love stories
-            </button>
-          </div>
-        </div>
-
         <div className="polaroid-stack">
           <button 
             className="carousel-handle carousel-handle--left"
