@@ -77,6 +77,7 @@ const HeroCarousel = () => {
               }}
               onMouseEnter={() => setHoveredId(moment.id)}
               onMouseLeave={() => setHoveredId(null)}
+              onClick={() => bringToFront(moment.id)}
             >
               <div className="polaroid__frame">
                 <img
