@@ -88,8 +88,9 @@
 /* Polaroid Stack */
 .polaroid-stack {
   position: relative;
-  height: 600px;
+  height: 650px;
   width: 100%;
+  max-width: 900px;
 }
 
 .polaroid {
