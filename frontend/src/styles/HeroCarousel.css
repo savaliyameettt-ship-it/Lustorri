@@ -90,9 +90,9 @@
 /* Polaroid Stack */
 .polaroid-stack {
   position: relative;
-  height: 650px;
+  height: 700px;
   width: 100%;
-  max-width: 900px;
+  max-width: 1400px;
 }
 
 .polaroid {
