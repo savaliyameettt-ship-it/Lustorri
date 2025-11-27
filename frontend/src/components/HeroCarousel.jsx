@@ -25,6 +25,18 @@ const HeroCarousel = () => {
     });
   };
 
+  const bringToFront = (clickedId) => {
+    setMoments(prev => {
+      const clickedIndex = prev.findIndex(m => m.id === clickedId);
+      if (clickedIndex === 0) return prev; // Already in front
+      
+      const newMoments = [...prev];
+      const [clickedMoment] = newMoments.splice(clickedIndex, 1);
+      newMoments.unshift(clickedMoment);
+      return newMoments;
+    });
+  };
+
   const getZIndex = (index) => {
     return 40 - index;
   };
