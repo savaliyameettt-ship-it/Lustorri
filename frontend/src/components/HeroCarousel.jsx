@@ -26,17 +26,20 @@ const HeroCarousel = () => {
   };
 
   const getZIndex = (index) => {
-    if (index === 0) return 40;
-    if (index === 1) return 35;
-    if (index === 2) return 30;
-    return 25;
+    return 40 - index;
   };
 
   const getTransform = (index) => {
-    if (index === 0) return 'translate(-50%, -50%) rotate(-3deg) scale(1)';
-    if (index === 1) return 'translate(-50%, -50%) rotate(5deg) scale(0.98) translateX(180px) translateY(-30px)';
-    if (index === 2) return 'translate(-50%, -50%) rotate(-7deg) scale(0.96) translateX(-200px) translateY(40px)';
-    return 'translate(-50%, -50%) rotate(4deg) scale(0.94) translateX(120px) translateY(80px)';
+    const transforms = [
+      'translate(-50%, -50%) rotate(-4deg) scale(1)',
+      'translate(-50%, -50%) rotate(6deg) scale(0.98) translateX(220px) translateY(-35px)',
+      'translate(-50%, -50%) rotate(-8deg) scale(0.97) translateX(-240px) translateY(45px)',
+      'translate(-50%, -50%) rotate(3deg) scale(0.96) translateX(140px) translateY(90px)',
+      'translate(-50%, -50%) rotate(-6deg) scale(0.95) translateX(-140px) translateY(-55px)',
+      'translate(-50%, -50%) rotate(7deg) scale(0.94) translateX(350px) translateY(30px)',
+      'translate(-50%, -50%) rotate(-5deg) scale(0.93) translateX(-360px) translateY(-20px)'
+    ];
+    return transforms[index] || 'translate(-50%, -50%) rotate(2deg) scale(0.92)';
   };
 
   return (
