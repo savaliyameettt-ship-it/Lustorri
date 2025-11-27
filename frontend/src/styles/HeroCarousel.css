@@ -173,27 +173,12 @@
 
 /* Mobile Responsive */
 @media (max-width: 1200px) {
-  .hero-carousel__container {
-    grid-template-columns: 1fr;
-    gap: 4rem;
-  }
-
-  .hero-content {
-    padding-right: 0;
-    text-align: center;
-    align-items: center;
-  }
-
   .hero-title {
     font-size: 3rem;
   }
 
-  .hero-buttons {
-    justify-content: center;
-  }
-
   .polaroid-stack {
-    height: 500px;
+    height: 550px;
   }
 
   .carousel-handle--left {
