@@ -27,16 +27,16 @@ const HeroCarousel = () => {
 
   const getZIndex = (index) => {
     if (index === 0) return 40;
-    if (index === 1) return 30;
-    if (index === 2) return 20;
-    return 10;
+    if (index === 1) return 35;
+    if (index === 2) return 30;
+    return 25;
   };
 
   const getTransform = (index) => {
-    if (index === 0) return 'translate(-50%, -50%) rotate(-2deg) scale(1)';
-    if (index === 1) return 'translate(-50%, -50%) rotate(3deg) scale(0.95) translateX(20px)';
-    if (index === 2) return 'translate(-50%, -50%) rotate(-4deg) scale(0.9) translateX(-25px)';
-    return 'translate(-50%, -50%) rotate(2deg) scale(0.85) translateY(15px)';
+    if (index === 0) return 'translate(-50%, -50%) rotate(-3deg) scale(1)';
+    if (index === 1) return 'translate(-50%, -50%) rotate(5deg) scale(0.98) translateX(180px) translateY(-30px)';
+    if (index === 2) return 'translate(-50%, -50%) rotate(-7deg) scale(0.96) translateX(-200px) translateY(40px)';
+    return 'translate(-50%, -50%) rotate(4deg) scale(0.94) translateX(120px) translateY(80px)';
   };
 
   return (
