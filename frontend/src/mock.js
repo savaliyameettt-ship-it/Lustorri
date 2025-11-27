@@ -28,6 +28,27 @@ export const polaroidMoments = [
     caption: "We choose us.",
     staticImage: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&q=80",
     gifImage: "https://media.giphy.com/media/xUOxf8lYzSGLlGDgmY/giphy.gif"
+  },
+  {
+    id: 5,
+    title: "The First Touch",
+    caption: "When everything changed.",
+    staticImage: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
+    gifImage: "https://media.giphy.com/media/26u4cqiYI30juCOGY/giphy.gif"
+  },
+  {
+    id: 6,
+    title: "The Secret Smile",
+    caption: "Only for you.",
+    staticImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
+    gifImage: "https://media.giphy.com/media/3o7WTqo27pLRYxRtg4/giphy.gif"
+  },
+  {
+    id: 7,
+    title: "The Dance",
+    caption: "Our song begins.",
+    staticImage: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
+    gifImage: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
   }
 ];
 
