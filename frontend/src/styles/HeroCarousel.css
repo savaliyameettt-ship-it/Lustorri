@@ -112,6 +112,8 @@
               0 2px 8px rgba(74, 55, 40, 0.1);
   width: 300px;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: visible;
 }
 
 .polaroid:hover .polaroid__frame {
