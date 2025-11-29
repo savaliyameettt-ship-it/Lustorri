@@ -4,46 +4,92 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: rgba(255, 255, 240, 0.95);
-  backdrop-filter: blur(10px);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--ivory-white);
 }
 
 .header--scrolled {
-  background-color: rgba(255, 255, 240, 0.98);
   box-shadow: 0 2px 20px rgba(74, 55, 40, 0.08);
 }
 
-.header__container {
-  max-width: 1400px;
+/* Navigation Row */
+.header__nav-row {
+  position: relative;
+  background-color: var(--ivory-white);
+  border-bottom: 1px solid var(--mocha-brown);
+}
+
+.header__nav-container {
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 1.5rem 3rem;
+  padding: 1.25rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
+  position: relative;
 }
 
-.header__logo .logo-text {
-  font-family: var(--font-serif-primary);
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: var(--champagne-gold);
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease;
-}
-
-.header__logo a {
-  text-decoration: none;
-}
-
-.header__logo .logo-text:hover {
-  color: var(--lust-red);
+/* Create gap in border for logo */
+.header__nav-row::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 2px;
+  background-color: var(--ivory-white);
+  z-index: 2;
 }
 
 .header__nav {
   display: flex;
   gap: 2.5rem;
   align-items: center;
+}
+
+.header__nav--left {
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.header__nav--right {
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.header__logo-spacer {
+  width: 200px;
+}
+
+/* Logo Row */
+.header__logo-row {
+  position: relative;
+  background-color: var(--ivory-white);
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 0 1.5rem 0;
+  z-index: 3;
+}
+
+.header__logo {
+  position: relative;
+  z-index: 3;
+}
+
+.header__logo a {
+  display: block;
+}
+
+.logo-image {
+  height: 80px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.05);
 }
 
 .nav-link {
