@@ -121,12 +121,43 @@ const HeroCarousel = () => {
               onClick={() => bringToFront(moment.id)}
             >
               <div className="polaroid__frame">
-                <img
-                  src={hoveredId === moment.id ? moment.gifImage : moment.staticImage}
-                  alt={moment.title}
-                  className="polaroid__image"
-                />
-                <p className="polaroid__caption">{moment.caption}</p>
+                <div className="polaroid__image-container">
+                  <img
+                    src={hoveredId === moment.id ? moment.gifImage : moment.staticImage}
+                    alt={moment.title}
+                    className="polaroid__image"
+                  />
+                  {/* Like button */}
+                  <button 
+                    className={`polaroid__like-btn ${likes[moment.id]?.liked ? 'liked' : ''}`}
+                    onClick={(e) => handleLike(moment.id, e)}
+                    aria-label="Like this moment"
+                  >
+                    <PixelHeart size={20} />
+                  </button>
+                  
+                  {/* Floating hearts */}
+                  {floatingHearts
+                    .filter(heart => heart.momentId === moment.id)
+                    .map(heart => (
+                      <div
+                        key={heart.id}
+                        className="floating-heart"
+                        style={{ animationDelay: `${heart.delay}ms` }}
+                      >
+                        <PixelHeart size={16} />
+                      </div>
+                    ))}
+                </div>
+                <div className="polaroid__footer">
+                  <p className="polaroid__caption">{moment.caption}</p>
+                  <div className="polaroid__likes">
+                    <PixelHeart size={12} />
+                    <span className="polaroid__likes-count">
+                      {likes[moment.id]?.count.toLocaleString()}
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
