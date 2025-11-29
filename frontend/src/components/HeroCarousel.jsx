@@ -217,9 +217,10 @@ const HeroCarousel = () => {
                 
                 {/* Like button - in white area */}
                 <button 
-                  className={`polaroid__like-btn ${likes[moment.id]?.liked ? 'liked' : ''}`}
+                  className={`polaroid__like-btn ${likes[moment.id]?.userLiked ? 'liked' : ''}`}
                   onClick={(e) => handleLike(moment.id, e)}
                   aria-label="Like this moment"
+                  disabled={!likes[moment.id]?.canLikeAgain}
                 >
                   <PixelHeart size={24} />
                 </button>
