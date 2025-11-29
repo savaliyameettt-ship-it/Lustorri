@@ -36,7 +36,7 @@
   bottom: -1px;
   left: 50%;
   transform: translateX(-50%);
-  width: 200px;
+  width: 280px;
   height: 2px;
   background-color: var(--ivory-white);
   z-index: 2;
@@ -59,7 +59,7 @@
 }
 
 .header__logo-spacer {
-  width: 200px;
+  width: 280px;
 }
 
 /* Logo Row */
