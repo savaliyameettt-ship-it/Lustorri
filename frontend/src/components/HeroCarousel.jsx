@@ -54,6 +54,7 @@ const HeroCarousel = () => {
   };
 
   const bringToFront = (clickedId) => {
+    resetAutoPlay();
     setMoments(prev => {
       const clickedIndex = prev.findIndex(m => m.id === clickedId);
       if (clickedIndex === 0) return prev; // Already in front
