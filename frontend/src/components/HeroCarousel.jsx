@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { polaroidMoments } from '../mock';
+import PixelHeart from './PixelHeart';
 import '../styles/HeroCarousel.css';
 
 const HeroCarousel = () => {
   const [moments, setMoments] = useState(polaroidMoments);
   const [hoveredId, setHoveredId] = useState(null);
+  const [likes, setLikes] = useState(
+    polaroidMoments.reduce((acc, moment) => {
+      acc[moment.id] = { count: moment.likes, liked: false };
+      return acc;
+    }, {})
+  );
+  const [floatingHearts, setFloatingHearts] = useState([]);
 
   const rotateLeft = () => {
     setMoments(prev => {
