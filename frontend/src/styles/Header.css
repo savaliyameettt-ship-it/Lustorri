@@ -30,15 +30,15 @@
   border-radius: 0;
 }
 
-/* Create gap in border for logo */
-.header__nav-row::after {
+/* Create gap in bottom border for logo */
+.header__nav-container::after {
   content: '';
   position: absolute;
-  bottom: -1px;
+  bottom: -2px;
   left: 50%;
   transform: translateX(-50%);
   width: 180px;
-  height: 2px;
+  height: 4px;
   background-color: var(--ivory-white);
   z-index: 2;
 }
