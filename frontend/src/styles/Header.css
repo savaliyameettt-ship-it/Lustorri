@@ -15,7 +15,7 @@
 .header__nav-row {
   position: relative;
   background-color: var(--ivory-white);
-  border-bottom: 1px solid var(--mocha-brown);
+  border-bottom: 2px solid var(--mocha-brown);
 }
 
 .header__nav-container {
