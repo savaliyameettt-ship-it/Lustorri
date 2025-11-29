@@ -15,7 +15,6 @@
 .header__nav-row {
   position: relative;
   background-color: var(--ivory-white);
-  border-bottom: 2px solid var(--mocha-brown);
 }
 
 .header__nav-container {
@@ -27,6 +26,8 @@
   justify-content: space-between;
   gap: 1.5rem;
   position: relative;
+  border: 2px solid var(--mocha-brown);
+  border-radius: 0;
 }
 
 /* Create gap in border for logo */
