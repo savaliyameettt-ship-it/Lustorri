@@ -137,59 +137,61 @@
 /* Like Button */
 .polaroid__like-btn {
   position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  background-color: rgba(255, 255, 240, 0.9);
+  bottom: 1rem;
+  left: 1rem;
+  background-color: transparent;
   border: none;
-  border-radius: 4px;
-  padding: 0.5rem;
+  padding: 0;
   cursor: pointer;
-  color: var(--mocha-brown);
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  color: var(--lust-red);
+  transition: color 0.3s ease, transform 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 10;
 }
 
 .polaroid__like-btn:hover {
-  background-color: rgba(255, 255, 240, 1);
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .polaroid__like-btn.liked {
-  background-color: rgba(139, 0, 0, 0.95);
-  color: var(--ivory-white);
+  color: var(--lust-red);
+  animation: heartPulse 0.3s ease;
 }
 
-.polaroid__like-btn.liked:hover {
-  background-color: var(--lust-red);
+@keyframes heartPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
 }
 
 /* Floating Hearts Animation */
 .floating-heart {
   position: absolute;
-  bottom: 0.75rem;
-  right: 0.75rem;
+  bottom: 1rem;
+  left: 1rem;
   color: var(--lust-red);
   pointer-events: none;
-  animation: floatUp 1.5s ease-out forwards;
+  animation: floatUpLeft 1.5s ease-out forwards;
   opacity: 0;
 }
 
-@keyframes floatUp {
+@keyframes floatUpLeft {
   0% {
     opacity: 1;
-    transform: translateY(0) scale(0.5);
+    transform: translateY(0) translateX(0) scale(0.5);
   }
   50% {
     opacity: 1;
-    transform: translateY(-100px) scale(1);
+    transform: translateY(-100px) translateX(-15px) scale(1);
   }
   100% {
     opacity: 0;
-    transform: translateY(-170px) scale(0.8) translateX(20px);
+    transform: translateY(-170px) translateX(-25px) scale(0.8);
   }
 }
 
