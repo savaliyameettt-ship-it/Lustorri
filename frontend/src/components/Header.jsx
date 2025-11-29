@@ -18,7 +18,7 @@ const Header = () => {
 
   // Split navigation links
   const leftLinks = navigationLinks.slice(0, 2); // Shop Rings, Stories
-  const rightLinks = navigationLinks.slice(2); // Engraved Cards, About, Support
+  const rightLinks = navigationLinks.slice(2, 4); // About, Support (removed Engraved Cards)
 
   return (
     <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
