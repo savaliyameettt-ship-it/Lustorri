@@ -168,14 +168,23 @@ const HeroCarousel = () => {
                 transform: getTransform(index),
                 opacity: index === 0 ? 1 : index <= 2 ? 0.95 : 0.88
               }}
-              onMouseEnter={() => setHoveredId(moment.id)}
+              onMouseEnter={() => {
+                setHoveredId(moment.id);
+                resetAutoPlay();
+              }}
               onMouseLeave={() => setHoveredId(null)}
               onClick={() => bringToFront(moment.id)}
             >
               <div className="polaroid__frame">
                 <div className="polaroid__image-container">
                   <img
-                    src={hoveredId === moment.id ? moment.gifImage : moment.staticImage}
+                    src={
+                      hoveredId === moment.id 
+                        ? moment.gifImage 
+                        : autoPlayGif === moment.id 
+                        ? moment.gifImage 
+                        : moment.staticImage
+                    }
                     alt={moment.title}
                     className="polaroid__image"
                   />
