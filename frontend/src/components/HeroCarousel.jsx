@@ -68,6 +68,7 @@ const HeroCarousel = () => {
 
   const handleLike = (momentId, event) => {
     event.stopPropagation(); // Prevent bringing polaroid to front
+    resetAutoPlay();
     
     setLikes(prev => ({
       ...prev,
@@ -98,6 +99,36 @@ const HeroCarousel = () => {
       );
     }, 2000);
   };
+
+  // Auto-play functionality
+  React.useEffect(() => {
+    if (!isUserActive && moments.length > 0) {
+      // Start showing GIF of front polaroid
+      setAutoPlayGif(moments[0].id);
+      
+      // After 4.5 seconds, rotate to next
+      rotateTimerRef.current = setTimeout(() => {
+        setMoments(prev => {
+          const newMoments = [...prev];
+          const first = newMoments.shift();
+          newMoments.push(first);
+          return newMoments;
+        });
+      }, 4500);
+    }
+    
+    return () => {
+      if (rotateTimerRef.current) clearTimeout(rotateTimerRef.current);
+    };
+  }, [isUserActive, moments]);
+
+  // Cleanup on unmount
+  React.useEffect(() => {
+    return () => {
+      if (autoPlayTimerRef.current) clearTimeout(autoPlayTimerRef.current);
+      if (rotateTimerRef.current) clearTimeout(rotateTimerRef.current);
+    };
+  }, []);
 
   const getZIndex = (index) => {
     return 40 - index;
