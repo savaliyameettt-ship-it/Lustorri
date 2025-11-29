@@ -68,8 +68,9 @@
   background-color: var(--ivory-white);
   display: flex;
   justify-content: center;
-  padding: 0.75rem 0 1.5rem 0;
+  padding: 0 0 1rem 0;
   z-index: 3;
+  margin-top: -45px;
 }
 
 .header__logo {
@@ -82,7 +83,7 @@
 }
 
 .logo-image {
-  height: 80px;
+  height: 90px;
   width: auto;
   display: block;
   transition: transform 0.3s ease;
