@@ -6,49 +6,56 @@ export const polaroidMoments = [
     title: "The Almost Kiss",
     caption: "The breath before.",
     staticImage: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=80",
-    gifImage: "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif"
+    gifImage: "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif",
+    likes: 1247
   },
   {
     id: 2,
     title: "The First Confession",
     caption: "Stay a little longer.",
     staticImage: "https://images.unsplash.com/photo-1522556189639-b150ed9c4330?w=800&q=80",
-    gifImage: "https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif"
+    gifImage: "https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif",
+    likes: 892
   },
   {
     id: 3,
     title: "The Quiet Morning",
     caption: "Where your day begins.",
     staticImage: "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=800&q=80",
-    gifImage: "https://media.giphy.com/media/26gsjCZpPolPr3sBy/giphy.gif"
+    gifImage: "https://media.giphy.com/media/26gsjCZpPolPr3sBy/giphy.gif",
+    likes: 2103
   },
   {
     id: 4,
     title: "The Promise Night",
     caption: "We choose us.",
     staticImage: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&q=80",
-    gifImage: "https://media.giphy.com/media/xUOxf8lYzSGLlGDgmY/giphy.gif"
+    gifImage: "https://media.giphy.com/media/xUOxf8lYzSGLlGDgmY/giphy.gif",
+    likes: 3456
   },
   {
     id: 5,
     title: "The First Touch",
     caption: "When everything changed.",
     staticImage: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
-    gifImage: "https://media.giphy.com/media/26u4cqiYI30juCOGY/giphy.gif"
+    gifImage: "https://media.giphy.com/media/26u4cqiYI30juCOGY/giphy.gif",
+    likes: 1689
   },
   {
     id: 6,
     title: "The Secret Smile",
     caption: "Only for you.",
     staticImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
-    gifImage: "https://media.giphy.com/media/3o7WTqo27pLRYxRtg4/giphy.gif"
+    gifImage: "https://media.giphy.com/media/3o7WTqo27pLRYxRtg4/giphy.gif",
+    likes: 978
   },
   {
     id: 7,
     title: "The Dance",
     caption: "Our song begins.",
     staticImage: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
-    gifImage: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
+    gifImage: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
+    likes: 1534
   }
 ];
 
