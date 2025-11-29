@@ -19,7 +19,22 @@ const HeroCarousel = () => {
   const autoPlayTimerRef = React.useRef(null);
   const rotateTimerRef = React.useRef(null);
 
+  const resetAutoPlay = () => {
+    setIsUserActive(true);
+    setAutoPlayGif(null);
+    
+    // Clear existing timers
+    if (autoPlayTimerRef.current) clearTimeout(autoPlayTimerRef.current);
+    if (rotateTimerRef.current) clearTimeout(rotateTimerRef.current);
+    
+    // Resume auto-play after 8 seconds of inactivity
+    autoPlayTimerRef.current = setTimeout(() => {
+      setIsUserActive(false);
+    }, 8000);
+  };
+
   const rotateLeft = () => {
+    resetAutoPlay();
     setMoments(prev => {
       const newMoments = [...prev];
       const first = newMoments.shift();
@@ -29,6 +44,7 @@ const HeroCarousel = () => {
   };
 
   const rotateRight = () => {
+    resetAutoPlay();
     setMoments(prev => {
       const newMoments = [...prev];
       const last = newMoments.pop();
