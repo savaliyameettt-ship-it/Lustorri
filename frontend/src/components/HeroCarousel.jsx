@@ -70,13 +70,29 @@ const HeroCarousel = () => {
     event.stopPropagation(); // Prevent bringing polaroid to front
     resetAutoPlay();
     
+    // Check if user can like (prevent spam clicking)
+    if (!likes[momentId].canLikeAgain) return;
+    
+    // Always increment - no unlike functionality
     setLikes(prev => ({
       ...prev,
       [momentId]: {
-        count: prev[momentId].liked ? prev[momentId].count - 1 : prev[momentId].count + 1,
-        liked: !prev[momentId].liked
+        count: prev[momentId].count + 1,
+        userLiked: true,
+        canLikeAgain: false
       }
     }));
+
+    // Re-enable liking after 1 second (prevents spam but allows multiple likes)
+    setTimeout(() => {
+      setLikes(prev => ({
+        ...prev,
+        [momentId]: {
+          ...prev[momentId],
+          canLikeAgain: true
+        }
+      }));
+    }, 1000);
 
     // Create floating hearts animation
     const heartCount = 8;
