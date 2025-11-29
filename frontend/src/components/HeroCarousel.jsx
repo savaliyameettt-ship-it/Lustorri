@@ -127,27 +127,6 @@ const HeroCarousel = () => {
                     alt={moment.title}
                     className="polaroid__image"
                   />
-                  {/* Like button */}
-                  <button 
-                    className={`polaroid__like-btn ${likes[moment.id]?.liked ? 'liked' : ''}`}
-                    onClick={(e) => handleLike(moment.id, e)}
-                    aria-label="Like this moment"
-                  >
-                    <PixelHeart size={20} />
-                  </button>
-                  
-                  {/* Floating hearts */}
-                  {floatingHearts
-                    .filter(heart => heart.momentId === moment.id)
-                    .map(heart => (
-                      <div
-                        key={heart.id}
-                        className="floating-heart"
-                        style={{ animationDelay: `${heart.delay}ms` }}
-                      >
-                        <PixelHeart size={16} />
-                      </div>
-                    ))}
                 </div>
                 <div className="polaroid__footer">
                   <p className="polaroid__caption">{moment.caption}</p>
@@ -158,6 +137,28 @@ const HeroCarousel = () => {
                     </span>
                   </div>
                 </div>
+                
+                {/* Like button - in white area */}
+                <button 
+                  className={`polaroid__like-btn ${likes[moment.id]?.liked ? 'liked' : ''}`}
+                  onClick={(e) => handleLike(moment.id, e)}
+                  aria-label="Like this moment"
+                >
+                  <PixelHeart size={24} />
+                </button>
+                
+                {/* Floating hearts */}
+                {floatingHearts
+                  .filter(heart => heart.momentId === moment.id)
+                  .map(heart => (
+                    <div
+                      key={heart.id}
+                      className="floating-heart"
+                      style={{ animationDelay: `${heart.delay}ms` }}
+                    >
+                      <PixelHeart size={16} />
+                    </div>
+                  ))}
               </div>
             </div>
           ))}
