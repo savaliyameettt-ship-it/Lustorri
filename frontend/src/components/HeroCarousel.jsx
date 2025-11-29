@@ -14,6 +14,10 @@ const HeroCarousel = () => {
     }, {})
   );
   const [floatingHearts, setFloatingHearts] = useState([]);
+  const [autoPlayGif, setAutoPlayGif] = useState(null);
+  const [isUserActive, setIsUserActive] = useState(false);
+  const autoPlayTimerRef = React.useRef(null);
+  const rotateTimerRef = React.useRef(null);
 
   const rotateLeft = () => {
     setMoments(prev => {
