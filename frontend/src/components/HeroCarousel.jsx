@@ -45,6 +45,39 @@ const HeroCarousel = () => {
     });
   };
 
+  const handleLike = (momentId, event) => {
+    event.stopPropagation(); // Prevent bringing polaroid to front
+    
+    setLikes(prev => ({
+      ...prev,
+      [momentId]: {
+        count: prev[momentId].liked ? prev[momentId].count - 1 : prev[momentId].count + 1,
+        liked: !prev[momentId].liked
+      }
+    }));
+
+    // Create floating hearts animation
+    const heartCount = 8;
+    const newHearts = [];
+    for (let i = 0; i < heartCount; i++) {
+      const heartId = `${momentId}-${Date.now()}-${i}`;
+      newHearts.push({
+        id: heartId,
+        momentId: momentId,
+        delay: i * 100
+      });
+    }
+    
+    setFloatingHearts(prev => [...prev, ...newHearts]);
+
+    // Remove hearts after animation
+    setTimeout(() => {
+      setFloatingHearts(prev => 
+        prev.filter(heart => !newHearts.find(h => h.id === heart.id))
+      );
+    }, 2000);
+  };
+
   const getZIndex = (index) => {
     return 40 - index;
   };
