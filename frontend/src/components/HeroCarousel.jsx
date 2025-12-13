@@ -70,35 +70,21 @@ const HeroCarousel = () => {
     event.stopPropagation(); // Prevent bringing polaroid to front
     resetAutoPlay();
     
-    // Check if user can like (prevent spam clicking)
-    if (!likes[momentId].canLikeAgain) return;
-    
-    // Always increment - no unlike functionality
+    // Always increment instantly - no cooldown, no waiting
     setLikes(prev => ({
       ...prev,
       [momentId]: {
         count: prev[momentId].count + 1,
-        userLiked: true,
-        canLikeAgain: false
+        userLiked: true
       }
     }));
-
-    // Re-enable liking after 1 second (prevents spam but allows multiple likes)
-    setTimeout(() => {
-      setLikes(prev => ({
-        ...prev,
-        [momentId]: {
-          ...prev[momentId],
-          canLikeAgain: true
-        }
-      }));
-    }, 1000);
 
     // Create floating hearts animation
     const heartCount = 8;
     const newHearts = [];
+    const timestamp = Date.now();
     for (let i = 0; i < heartCount; i++) {
-      const heartId = `${momentId}-${Date.now()}-${i}`;
+      const heartId = `${momentId}-${timestamp}-${Math.random()}-${i}`;
       newHearts.push({
         id: heartId,
         momentId: momentId,
@@ -108,7 +94,7 @@ const HeroCarousel = () => {
     
     setFloatingHearts(prev => [...prev, ...newHearts]);
 
-    // Remove hearts after animation
+    // Remove hearts after animation completes
     setTimeout(() => {
       setFloatingHearts(prev => 
         prev.filter(heart => !newHearts.find(h => h.id === heart.id))
