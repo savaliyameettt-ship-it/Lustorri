@@ -8,6 +8,9 @@ const BiteBand = () => {
   const [selectedMetal, setSelectedMetal] = useState('14k-yellow-gold');
   const [selectedSize, setSelectedSize] = useState('7');
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [showHero, setShowHero] = useState(false);
+  const [showSubtext, setShowSubtext] = useState(false);
+  const [showScrollIndicator, setShowScrollIndicator] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +21,29 @@ const BiteBand = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    // Pure black for 0.5s
+    const heroTimer = setTimeout(() => {
+      setShowHero(true);
+    }, 500);
+
+    // Subtext after hero settles (0.5s after hero starts = 2s total)
+    const subtextTimer = setTimeout(() => {
+      setShowSubtext(true);
+    }, 2000);
+
+    // Scroll indicator after subtext (1s after subtext = 3s total)
+    const scrollTimer = setTimeout(() => {
+      setShowScrollIndicator(true);
+    }, 3000);
+
+    return () => {
+      clearTimeout(heroTimer);
+      clearTimeout(subtextTimer);
+      clearTimeout(scrollTimer);
+    };
   }, []);
 
   const metalOptions = [
