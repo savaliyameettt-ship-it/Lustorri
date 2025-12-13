@@ -175,7 +175,13 @@ const HeroCarousel = () => {
                 resetAutoPlay();
               }}
               onMouseLeave={() => setHoveredId(null)}
-              onClick={() => bringToFront(moment.id)}
+              onClick={() => {
+                if (moment.productLink) {
+                  window.location.href = moment.productLink;
+                } else {
+                  bringToFront(moment.id);
+                }
+              }}
             >
               <div className="polaroid__frame">
                 <div className="polaroid__image-container">
