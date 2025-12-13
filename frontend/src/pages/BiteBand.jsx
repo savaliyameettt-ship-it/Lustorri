@@ -90,25 +90,82 @@ const BiteBand = () => {
         )}
       </section>
 
-      {/* Story Section */}
-      <section className="story-section">
-        <div className="story-content">
-          <p className="story-line" style={{ opacity: Math.min(1, scrollProgress * 5) }}>
-            Love isn't always gentle.
-          </p>
-          <p className="story-line" style={{ opacity: Math.min(1, scrollProgress * 6) }}>
-            Sometimes it leaves traces—
-          </p>
-          <p className="story-line" style={{ opacity: Math.min(1, scrollProgress * 7) }}>
-            teeth against skin, memory against time.
-          </p>
-          <div className="story-full" style={{ opacity: Math.min(1, scrollProgress * 8) }}>
-            <p>
-              Love isn't always gentle. Sometimes it leaves traces — teeth against skin, memory against time. 
-              The Bite Band was forged for those who crave fiercely and love without apology. It celebrates 
-              the hunger that makes devotion human — the beautiful ache of wanting someone so much, you leave 
-              a mark on their forever. Because lust doesn't destroy love… it reminds it to stay alive.
-            </p>
+      {/* Story + Craft Section */}
+      <section className="story-craft-section">
+        <div className="story-craft-container">
+          {/* Left: Rotating Ring */}
+          <div className="ring-column">
+            <div className="rotating-ring">
+              <img 
+                src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80" 
+                alt="The Bite Band - Rotating View"
+                className="ring-rotate-image"
+              />
+            </div>
+          </div>
+
+          {/* Right: Story & Craft Text */}
+          <div className="text-column">
+            {/* Beat 1 - The Story */}
+            <div className="story-beat">
+              <p 
+                className="story-beat-line"
+                style={{ 
+                  opacity: Math.min(1, Math.max(0, (scrollProgress - 0.05) * 8)),
+                  transform: `translateY(${Math.max(0, 20 - (scrollProgress - 0.05) * 160)}px)`
+                }}
+              >
+                Love isn't always gentle.
+              </p>
+              <p 
+                className="story-beat-line"
+                style={{ 
+                  opacity: Math.min(1, Math.max(0, (scrollProgress - 0.08) * 8)),
+                  transform: `translateY(${Math.max(0, 20 - (scrollProgress - 0.08) * 160)}px)`
+                }}
+              >
+                Sometimes it leaves traces—
+              </p>
+              <p 
+                className="story-beat-line"
+                style={{ 
+                  opacity: Math.min(1, Math.max(0, (scrollProgress - 0.11) * 8)),
+                  transform: `translateY(${Math.max(0, 20 - (scrollProgress - 0.11) * 160)}px)`
+                }}
+              >
+                teeth against skin, memory against time.
+              </p>
+            </div>
+
+            {/* Divider Line */}
+            <div 
+              className="craft-divider"
+              style={{ 
+                opacity: Math.min(1, Math.max(0, (scrollProgress - 0.15) * 10)),
+                width: Math.min(30, (scrollProgress - 0.15) * 300) + 'px'
+              }}
+            ></div>
+
+            {/* Beat 2 - The Craft */}
+            <div 
+              className="craft-beat"
+              style={{ 
+                opacity: Math.min(1, Math.max(0, (scrollProgress - 0.18) * 8))
+              }}
+            >
+              <p className="craft-line">
+                The asymmetry is intentional—<br/>
+                passion doesn't leave symmetrical marks.
+              </p>
+              <p className="craft-line">
+                The bite indents along the edge—<br/>
+                because real love isn't smooth.
+              </p>
+              <p className="craft-line">
+                The diamond rests where the mark ends—<br/>
+                light caught in the wound.
+              </p>
+            </div>
           </div>
         </div>
       </section>
