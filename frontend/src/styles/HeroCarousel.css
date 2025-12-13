@@ -153,19 +153,17 @@
   z-index: 10;
 }
 
-.polaroid__like-btn:hover:not(:disabled) {
+.polaroid__like-btn:hover {
   transform: scale(1.15);
   cursor: pointer;
 }
 
-.polaroid__like-btn:disabled {
-  opacity: 0.6;
-  cursor: wait;
+.polaroid__like-btn:active {
+  transform: scale(0.95);
 }
 
 .polaroid__like-btn.liked {
   color: var(--lust-red);
-  animation: heartPulse 0.3s ease;
 }
 
 @keyframes heartPulse {
