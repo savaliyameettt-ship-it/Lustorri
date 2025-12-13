@@ -11,9 +11,9 @@ import StoriesTeaser from './components/StoriesTeaser';
 import Footer from './components/Footer';
 import BiteBand from './pages/BiteBand';
 
-function App() {
+const Home = () => {
   return (
-    <div className="App">
+    <div>
       <Header />
       <main>
         <HeroCarousel />
@@ -24,6 +24,19 @@ function App() {
         <StoriesTeaser />
       </main>
       <Footer />
+    </div>
+  );
+};
+
+function App() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/bite-band" element={<BiteBand />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
