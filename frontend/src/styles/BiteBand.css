@@ -635,6 +635,28 @@
 
 /* Mobile Responsive */
 @media (max-width: 1024px) {
+  .story-craft-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .ring-column {
+    position: relative;
+    top: auto;
+    transform: none;
+    height: 50vh;
+    min-height: 400px;
+  }
+
+  .text-column {
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .story-beat-line {
+    font-size: 1.75rem;
+  }
+
   .showcase-container,
   .card-preview-content {
     grid-template-columns: 1fr;
@@ -644,10 +666,6 @@
   .meaning-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
-  }
-
-  .story-line {
-    font-size: 2rem;
   }
 }
 
