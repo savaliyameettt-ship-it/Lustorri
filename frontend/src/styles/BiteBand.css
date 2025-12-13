@@ -675,12 +675,22 @@
     letter-spacing: 0.03em;
   }
 
-  .story-line {
-    font-size: 1.5rem;
+  .story-craft-section {
+    padding: 60px 1.5rem;
   }
 
-  .story-full {
-    font-size: 1.125rem;
+  .ring-column {
+    height: 40vh;
+    min-height: 300px;
+  }
+
+  .story-beat-line {
+    font-size: 1.5rem;
+    line-height: 1.8em;
+  }
+
+  .craft-line {
+    font-size: 0.875rem;
   }
 
   .main-image {
