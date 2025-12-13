@@ -218,53 +218,45 @@
 .text-column {
   padding: 4rem 0;
   display: flex;
-  flex-direction: column;
-  gap: 60px;
+  align-items: center;
 }
 
-/* Beat 1 - The Story */
-.story-beat {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+/* Interwoven Text Block */
+.interwoven-text {
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-.story-beat-line {
+.text-line {
+  line-height: 1.6em;
+  margin: 0;
+}
+
+/* Emotional lines - Playfair italic */
+.text-line--emotional {
   font-family: 'Playfair Display', serif;
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   font-style: italic;
   color: #F5F0E8;
-  line-height: 2em;
-  opacity: 0;
-  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Divider */
-.craft-divider {
-  width: 30px;
-  height: 1px;
-  background-color: #C9A227;
-  margin: 0 auto;
-  opacity: 0;
-  transition: opacity 0.5s ease, width 0.5s ease;
-}
-
-/* Beat 2 - The Craft */
-.craft-beat {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-.craft-line {
+/* Craft response lines - Montserrat regular */
+.text-line--craft {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
+  font-size: 1.125rem;
   font-weight: 400;
-  color: #C9A227;
-  line-height: 1.8em;
+  color: #F5F0E8;
   letter-spacing: 0.3px;
+}
+
+/* Final line in gold */
+.text-line--gold {
+  color: #D4AF37;
+}
+
+/* Spacing between stanzas */
+.stanza-break {
+  margin-top: 1.5em;
 }
 
 /* Ring Showcase */
