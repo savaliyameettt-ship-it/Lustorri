@@ -684,13 +684,16 @@
     min-height: 300px;
   }
 
-  .story-beat-line {
-    font-size: 1.5rem;
-    line-height: 1.8em;
+  .interwoven-text {
+    text-align: center;
   }
 
-  .craft-line {
-    font-size: 0.875rem;
+  .text-line--emotional {
+    font-size: 1.125rem;
+  }
+
+  .text-line--craft {
+    font-size: 0.95rem;
   }
 
   .main-image {
