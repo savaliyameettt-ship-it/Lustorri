@@ -96,23 +96,68 @@
   bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 3;
+  animation: fadeInScrollIndicator 0.5s ease-in forwards;
+}
+
+@keyframes fadeInScrollIndicator {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .scroll-line {
   width: 1px;
-  height: 60px;
-  background: linear-gradient(to bottom, transparent, #D4AF37);
-  animation: scrollPulse 2s ease-in-out infinite;
+  height: 0;
+  background: #C9A227;
+  box-shadow: 0 0 10px rgba(201, 162, 39, 0.5);
+  animation: drawLine 1s ease-out forwards, scrollPulse 2s ease-in-out infinite 1s;
+  position: relative;
+}
+
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: #C9A227;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(201, 162, 39, 0.8);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes drawLine {
+  from {
+    height: 0;
+  }
+  to {
+    height: 60px;
+  }
 }
 
 @keyframes scrollPulse {
   0%, 100% {
-    opacity: 0.3;
-    transform: translateY(0);
+    opacity: 0.5;
   }
   50% {
     opacity: 1;
-    transform: translateY(10px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(201, 162, 39, 0.5);
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(201, 162, 39, 1);
+    transform: translateX(-50%) scale(1.2);
   }
 }
 
