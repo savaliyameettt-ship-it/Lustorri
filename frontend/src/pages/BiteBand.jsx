@@ -104,65 +104,32 @@ const BiteBand = () => {
             </div>
           </div>
 
-          {/* Right: Story & Craft Text */}
+          {/* Right: Interwoven Story & Craft Text */}
           <div className="text-column">
-            {/* Beat 1 - The Story */}
-            <div className="story-beat">
-              <p 
-                className="story-beat-line"
-                style={{ 
-                  opacity: Math.min(1, Math.max(0, (scrollProgress - 0.05) * 8)),
-                  transform: `translateY(${Math.max(0, 20 - (scrollProgress - 0.05) * 160)}px)`
-                }}
-              >
-                Love isn't always gentle.
-              </p>
-              <p 
-                className="story-beat-line"
-                style={{ 
-                  opacity: Math.min(1, Math.max(0, (scrollProgress - 0.08) * 8)),
-                  transform: `translateY(${Math.max(0, 20 - (scrollProgress - 0.08) * 160)}px)`
-                }}
-              >
-                Sometimes it leaves traces—
-              </p>
-              <p 
-                className="story-beat-line"
-                style={{ 
-                  opacity: Math.min(1, Math.max(0, (scrollProgress - 0.11) * 8)),
-                  transform: `translateY(${Math.max(0, 20 - (scrollProgress - 0.11) * 160)}px)`
-                }}
-              >
-                teeth against skin, memory against time.
-              </p>
-            </div>
-
-            {/* Divider Line */}
             <div 
-              className="craft-divider"
+              className="interwoven-text"
               style={{ 
-                opacity: Math.min(1, Math.max(0, (scrollProgress - 0.15) * 10)),
-                width: Math.min(30, (scrollProgress - 0.15) * 300) + 'px'
-              }}
-            ></div>
-
-            {/* Beat 2 - The Craft */}
-            <div 
-              className="craft-beat"
-              style={{ 
-                opacity: Math.min(1, Math.max(0, (scrollProgress - 0.18) * 8))
+                opacity: Math.min(1, Math.max(0, (scrollProgress - 0.08) * 10))
               }}
             >
-              <p className="craft-line">
-                The asymmetry is intentional—<br/>
-                passion doesn't leave symmetrical marks.
+              <p className="text-line text-line--emotional">
+                Love isn't always gentle—
               </p>
-              <p className="craft-line">
-                The bite indents along the edge—<br/>
-                because real love isn't smooth.
+              <p className="text-line text-line--craft">
+                so we didn't make a gentle ring.
               </p>
-              <p className="craft-line">
-                The diamond rests where the mark ends—<br/>
+
+              <p className="text-line text-line--emotional stanza-break">
+                The bite indents along the edge?
+              </p>
+              <p className="text-line text-line--craft">
+                Passion doesn't leave symmetrical marks.
+              </p>
+
+              <p className="text-line text-line--emotional stanza-break">
+                The diamond rests where the mark ends—
+              </p>
+              <p className="text-line text-line--craft text-line--gold">
                 light caught in the wound.
               </p>
             </div>
