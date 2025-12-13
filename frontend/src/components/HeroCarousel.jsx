@@ -9,7 +9,7 @@ const HeroCarousel = () => {
   const [hoveredId, setHoveredId] = useState(null);
   const [likes, setLikes] = useState(
     polaroidMoments.reduce((acc, moment) => {
-      acc[moment.id] = { count: moment.likes, userLiked: false, canLikeAgain: true };
+      acc[moment.id] = { count: moment.likes, userLiked: false };
       return acc;
     }, {})
   );
