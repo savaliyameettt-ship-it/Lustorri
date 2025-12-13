@@ -3,10 +3,10 @@
 export const polaroidMoments = [
   {
     id: 1,
-    title: "The Almost Kiss",
-    caption: "The breath before.",
+    title: "I tasted forever",
+    caption: "I tasted forever.",
     staticImage: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=80",
-    gifImage: "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif",
+    gifImage: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGljMzA1bWU4enBxOXl0eTVnNDRmYnY3cnplM2phdzcxY2FieW5iNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/q8TEi7UTxas92/giphy.gif",
     likes: 1247
   },
   {
