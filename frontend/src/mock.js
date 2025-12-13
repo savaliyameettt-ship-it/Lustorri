@@ -5,9 +5,10 @@ export const polaroidMoments = [
     id: 1,
     title: "I tasted forever",
     caption: "I tasted forever.",
-    staticImage: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=80",
-    gifImage: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGljMzA1bWU4enBxOXl0eTVnNDRmYnY3cnplM2phdzcxY2FieW5iNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/q8TEi7UTxas92/giphy.gif",
-    likes: 1247
+    staticImage: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
+    gifImage: "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif",
+    likes: 1247,
+    productLink: "/bite-band"
   },
   {
     id: 2,
