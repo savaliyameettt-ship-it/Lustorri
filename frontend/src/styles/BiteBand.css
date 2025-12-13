@@ -645,8 +645,16 @@
     padding: 2rem 0;
   }
 
-  .story-beat-line {
-    font-size: 1.75rem;
+  .interwoven-text {
+    text-align: center;
+  }
+
+  .text-line--emotional {
+    font-size: 1.25rem;
+  }
+
+  .text-line--craft {
+    font-size: 1rem;
   }
 
   .showcase-container,
