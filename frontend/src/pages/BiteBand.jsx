@@ -74,17 +74,20 @@ const BiteBand = () => {
 
       {/* Hero Section */}
       <section className="hero-section">
+        <div className="hero-vignette"></div>
         <div className="hero-content">
-          <h1 className="hero-title" style={{ opacity: Math.min(1, scrollProgress * 3) }}>
+          <h1 className={`hero-title ${showHero ? 'hero-title--visible' : ''}`}>
             I tasted forever.
           </h1>
-          <p className="hero-subtitle" style={{ opacity: Math.min(1, scrollProgress * 4) }}>
+          <p className={`hero-subtitle ${showSubtext ? 'hero-subtitle--visible' : ''}`}>
             Some marks were meant to stay.
           </p>
         </div>
-        <div className="scroll-indicator">
-          <div className="scroll-line"></div>
-        </div>
+        {showScrollIndicator && (
+          <div className="scroll-indicator">
+            <div className="scroll-line"></div>
+          </div>
+        )}
       </section>
 
       {/* Story Section */}
