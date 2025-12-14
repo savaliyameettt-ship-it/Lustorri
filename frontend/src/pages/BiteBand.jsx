@@ -313,30 +313,41 @@ const BiteBand = () => {
           <div className="card-image">
             <div className="card-scene">
               <div 
-                className={`metal-card ${isDragging ? 'metal-card--dragging' : ''}`}
-                style={{ transform: `rotateY(${cardRotation}deg)` }}
+                className={`card-3d-box ${isDragging ? 'card-3d-box--dragging' : ''}`}
+                style={{ transform: `rotateY(${cardRotation}deg) rotateX(-10deg)` }}
                 onMouseDown={handleCardMouseDown}
                 onMouseLeave={handleCardMouseLeave}
               >
-                <div className="card-face card-front">
-                  <div className="card-content">
-                    <p className="card-text">
-                      Love isn't always gentle.<br/>
-                      Sometimes it leaves traces—<br/>
-                      teeth against skin,<br/>
-                      memory against time.
-                    </p>
-                  </div>
+                {/* Front Face */}
+                <div className="box-face box-front">
+                  <p className="card-text">
+                    Love isn't always gentle.<br/>
+                    Sometimes it leaves traces—<br/>
+                    teeth against skin,<br/>
+                    memory against time.
+                  </p>
                 </div>
-                <div className="card-face card-back">
-                  <div className="card-content">
-                    <p className="card-text">
-                      The Bite Band<br/>
-                      <span className="card-subtext">For those who crave fiercely</span>
-                    </p>
-                    <div className="card-logo">Lustorri</div>
-                  </div>
+                
+                {/* Back Face */}
+                <div className="box-face box-back">
+                  <p className="card-text">
+                    The Bite Band<br/>
+                    <span className="card-subtext">For those who crave fiercely</span>
+                  </p>
+                  <div className="card-logo">Lustorri</div>
                 </div>
+                
+                {/* Top Face */}
+                <div className="box-face box-top"></div>
+                
+                {/* Bottom Face */}
+                <div className="box-face box-bottom"></div>
+                
+                {/* Left Face */}
+                <div className="box-face box-left"></div>
+                
+                {/* Right Face */}
+                <div className="box-face box-right"></div>
               </div>
             </div>
             <p className="drag-hint">
