@@ -416,15 +416,19 @@
 
 /* Card 3D Scene Container */
 .card-scene {
-  width: 400px;
-  height: 280px;
-  perspective: 1500px;
+  width: 450px;
+  height: 320px;
+  perspective: 2000px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.metal-card {
-  width: 100%;
-  height: 100%;
+/* 3D Box */
+.card-3d-box {
+  width: 400px;
+  height: 280px;
   position: relative;
   cursor: grab;
   transform-style: preserve-3d;
@@ -432,46 +436,73 @@
   user-select: none;
 }
 
-.metal-card--dragging {
+.card-3d-box--dragging {
   cursor: grabbing;
   transition: none;
 }
 
-/* Card Faces */
-.card-face {
+/* Box Faces */
+.box-face {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.card-content {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
-  border: 2px solid #D4AF37;
-  padding: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3),
-              inset 0 1px 1px rgba(212, 175, 55, 0.1);
+  padding: 2rem;
+  background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+  border: 2px solid #D4AF37;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
 }
 
-.card-front {
-  transform: rotateY(0deg);
+/* Front face */
+.box-front {
+  width: 400px;
+  height: 280px;
+  transform: translateZ(15px);
 }
 
-.card-back {
-  transform: rotateY(180deg);
-}
-
-.card-back .card-content {
+/* Back face */
+.box-back {
+  width: 400px;
+  height: 280px;
+  transform: translateZ(-15px) rotateY(180deg);
   background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%);
+}
+
+/* Top face */
+.box-top {
+  width: 400px;
+  height: 30px;
+  transform: rotateX(90deg) translateZ(125px);
+  background: linear-gradient(90deg, #2A2A2A 0%, #1A1A1A 100%);
+  border: 1px solid #D4AF37;
+}
+
+/* Bottom face */
+.box-bottom {
+  width: 400px;
+  height: 30px;
+  transform: rotateX(-90deg) translateZ(155px);
+  background: linear-gradient(90deg, #1A1A1A 0%, #2A2A2A 100%);
+  border: 1px solid #D4AF37;
+}
+
+/* Left face */
+.box-left {
+  width: 30px;
+  height: 280px;
+  transform: rotateY(-90deg) translateZ(185px);
+  background: linear-gradient(180deg, #2A2A2A 0%, #1A1A1A 100%);
+  border: 1px solid #D4AF37;
+}
+
+/* Right face */
+.box-right {
+  width: 30px;
+  height: 280px;
+  transform: rotateY(90deg) translateZ(215px);
+  background: linear-gradient(180deg, #1A1A1A 0%, #2A2A2A 100%);
+  border: 1px solid #D4AF37;
 }
 
 .card-logo {
