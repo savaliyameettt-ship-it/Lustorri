@@ -97,7 +97,7 @@ const BiteBand = () => {
           <div className="ring-column">
             <div className="rotating-ring">
               <img 
-                src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80" 
+                src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80" 
                 alt="The Bite Band - Rotating View"
                 className="ring-rotate-image"
               />
