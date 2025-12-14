@@ -415,11 +415,38 @@
 }
 
 .metal-card {
+  width: 400px;
+  height: 280px;
+  position: relative;
+  cursor: grab;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+  user-select: none;
+}
+
+.metal-card--dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
   border: 2px solid #D4AF37;
   padding: 3rem;
   border-radius: 4px;
   box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-back {
+  transform: rotateY(180deg);
 }
 
 .card-text {
@@ -428,6 +455,25 @@
   font-style: italic;
   color: #D4AF37;
   line-height: 1.8;
+  text-align: center;
+}
+
+.card-subtext {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  color: rgba(212, 175, 55, 0.8);
+  display: block;
+  margin-top: 1rem;
+}
+
+.drag-hint {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: rgba(212, 175, 55, 0.6);
+  text-align: center;
+  margin-top: 1.5rem;
+  letter-spacing: 0.5px;
 }
 
 .card-description {
