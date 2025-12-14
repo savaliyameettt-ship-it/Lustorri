@@ -311,29 +311,36 @@ const BiteBand = () => {
       <section className="card-preview-section">
         <div className="card-preview-content">
           <div className="card-image">
-            <div 
-              className={`metal-card ${isDragging ? 'metal-card--dragging' : ''}`}
-              style={{ transform: `perspective(1000px) rotateY(${cardRotation}deg)` }}
-              onMouseDown={handleCardMouseDown}
-              onMouseLeave={handleCardMouseLeave}
-            >
-              <div className="card-front">
-                <p className="card-text">
-                  Love isn't always gentle.<br/>
-                  Sometimes it leaves traces—<br/>
-                  teeth against skin,<br/>
-                  memory against time.
-                </p>
-              </div>
-              <div className="card-back">
-                <p className="card-text">
-                  The Bite Band<br/>
-                  <span className="card-subtext">For those who crave fiercely</span>
-                </p>
+            <div className="card-scene">
+              <div 
+                className={`metal-card ${isDragging ? 'metal-card--dragging' : ''}`}
+                style={{ transform: `rotateY(${cardRotation}deg)` }}
+                onMouseDown={handleCardMouseDown}
+                onMouseLeave={handleCardMouseLeave}
+              >
+                <div className="card-face card-front">
+                  <div className="card-content">
+                    <p className="card-text">
+                      Love isn't always gentle.<br/>
+                      Sometimes it leaves traces—<br/>
+                      teeth against skin,<br/>
+                      memory against time.
+                    </p>
+                  </div>
+                </div>
+                <div className="card-face card-back">
+                  <div className="card-content">
+                    <p className="card-text">
+                      The Bite Band<br/>
+                      <span className="card-subtext">For those who crave fiercely</span>
+                    </p>
+                    <div className="card-logo">Lustorri</div>
+                  </div>
+                </div>
               </div>
             </div>
             <p className="drag-hint">
-              Click and drag to rotate
+              Click and drag to rotate • 360°
             </p>
           </div>
           <div className="card-info">
