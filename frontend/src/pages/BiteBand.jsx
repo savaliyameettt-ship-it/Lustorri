@@ -311,14 +311,30 @@ const BiteBand = () => {
       <section className="card-preview-section">
         <div className="card-preview-content">
           <div className="card-image">
-            <div className="metal-card">
-              <p className="card-text">
-                Love isn't always gentle.<br/>
-                Sometimes it leaves traces—<br/>
-                teeth against skin,<br/>
-                memory against time.
-              </p>
+            <div 
+              className={`metal-card ${isDragging ? 'metal-card--dragging' : ''}`}
+              style={{ transform: `perspective(1000px) rotateY(${cardRotation}deg)` }}
+              onMouseDown={handleCardMouseDown}
+              onMouseLeave={handleCardMouseLeave}
+            >
+              <div className="card-front">
+                <p className="card-text">
+                  Love isn't always gentle.<br/>
+                  Sometimes it leaves traces—<br/>
+                  teeth against skin,<br/>
+                  memory against time.
+                </p>
+              </div>
+              <div className="card-back">
+                <p className="card-text">
+                  The Bite Band<br/>
+                  <span className="card-subtext">For those who crave fiercely</span>
+                </p>
+              </div>
             </div>
+            <p className="drag-hint">
+              Click and drag to rotate
+            </p>
           </div>
           <div className="card-info">
             <h2 className="section-title">Every ring tells a story.</h2>
