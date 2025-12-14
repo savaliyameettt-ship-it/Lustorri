@@ -175,6 +175,7 @@
   grid-template-columns: 40% 60%;
   gap: 6rem;
   align-items: center;
+  min-height: 80vh;
 }
 
 /* Left Column - Rotating Ring */
