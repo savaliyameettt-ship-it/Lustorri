@@ -11,6 +11,12 @@ const BiteBand = () => {
   const [showHero, setShowHero] = useState(false);
   const [showSubtext, setShowSubtext] = useState(false);
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
+  
+  // Card rotation state
+  const [cardRotation, setCardRotation] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStartX, setDragStartX] = useState(0);
+  const [dragStartRotation, setDragStartRotation] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,7 +103,7 @@ const BiteBand = () => {
           <div className="ring-column">
             <div className="rotating-ring">
               <img 
-                src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80" 
+                src="https://pub-30aaef0fec5e44b39ba9d9bd850cc6dd.r2.dev/BITE%20RING.jpg" 
                 alt="The Bite Band - Rotating View"
                 className="ring-rotate-image"
               />
@@ -142,94 +148,24 @@ const BiteBand = () => {
         <div className="showcase-container">
           <div className="ring-images">
             <img 
-              src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80" 
+              src="https://pub-30aaef0fec5e44b39ba9d9bd850cc6dd.r2.dev/BITE%20RING.jpg" 
               alt="The Bite Band - Main View"
               className="ring-image main-image"
             />
             <div className="detail-images">
               <img 
-                src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80" 
+                src="https://pub-30aaef0fec5e44b39ba9d9bd850cc6dd.r2.dev/Bite%20Ring%20-%20front%20O%20shape.png" 
                 alt="Bite Indents Detail"
                 className="ring-image detail-image"
               />
               <img 
-                src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80" 
+                src="https://pub-30aaef0fec5e44b39ba9d9bd850cc6dd.r2.dev/Bite%20ring%20-%2090%20side%20profile%20close-up.png" 
                 alt="Diamond Detail"
                 className="ring-image detail-image"
               />
             </div>
           </div>
-          <div className="ring-specs">
-            <h2 className="section-title">The Bite Band</h2>
-            <div className="specs-list">
-              <div className="spec-item">
-                <span className="spec-label">Metal</span>
-                <span className="spec-value">Black Rhodium</span>
-              </div>
-              <div className="spec-item">
-                <span className="spec-label">Stone</span>
-                <span className="spec-value">Lab-grown Pear-cut Diamond</span>
-              </div>
-              <div className="spec-item">
-                <span className="spec-label">Engraving</span>
-                <span className="spec-value">"I tasted forever."</span>
-              </div>
-              <div className="spec-item">
-                <span className="spec-label">Includes</span>
-                <span className="spec-value">Metal Story Card</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Meaning Section */}
-      <section className="meaning-section">
-        <div className="meaning-grid">
-          <div className="meaning-card">
-            <h3 className="meaning-title">For those who crave fiercely</h3>
-            <p className="meaning-text">
-              This ring is for couples who don't love quietly.
-            </p>
-          </div>
-          <div className="meaning-card">
-            <h3 className="meaning-title">Passion left its mark</h3>
-            <p className="meaning-text">
-              The bite indents are intentional imperfection. Real love isn't smooth.
-            </p>
-          </div>
-          <div className="meaning-card">
-            <h3 className="meaning-title">A secret only you share</h3>
-            <p className="meaning-text">
-              The inside engraving is invisible to the world. Just like your best moments.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Engraved Card Preview */}
-      <section className="card-preview-section">
-        <div className="card-preview-content">
-          <div className="card-image">
-            <div className="metal-card">
-              <p className="card-text">
-                Love isn't always gentle.<br/>
-                Sometimes it leaves traces—<br/>
-                teeth against skin,<br/>
-                memory against time.
-              </p>
-            </div>
-          </div>
-          <div className="card-info">
-            <h2 className="section-title">Every ring tells a story.</h2>
-            <p className="card-description">
-              This one comes with yours.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Purchase Section */}
+          {/* Purchase Section */}
       <section className="purchase-section">
         <div className="purchase-container">
           <h2 className="purchase-title">Make It Yours</h2>
@@ -285,6 +221,75 @@ const BiteBand = () => {
               <p className="trust-item">Lab-grown diamond · Ethically crafted</p>
               <p className="trust-item">30-day returns · Lifetime warranty</p>
             </div>
+          </div>
+        </div>
+      </section>
+          {/* <div className="ring-specs">
+            <h2 className="section-title">The Bite Band</h2>
+            <div className="specs-list">
+              <div className="spec-item">
+                <span className="spec-label">Metal</span>
+                <span className="spec-value">Black Rhodium</span>
+              </div>
+              <div className="spec-item">
+                <span className="spec-label">Stone</span>
+                <span className="spec-value">Lab-grown Pear-cut Diamond</span>
+              </div>
+              <div className="spec-item">
+                <span className="spec-label">Engraving</span>
+                <span className="spec-value">"I tasted forever."</span>
+              </div>
+              <div className="spec-item">
+                <span className="spec-label">Includes</span>
+                <span className="spec-value">Metal Story Card</span>
+              </div>
+            </div>
+          </div> */}
+        </div>
+      </section>
+
+      {/* Meaning Section */}
+      <section className="meaning-section">
+        <div className="meaning-grid">
+          <div className="meaning-card">
+            <h3 className="meaning-title">For those who crave fiercely</h3>
+            <p className="meaning-text">
+              This ring is for couples who don't love quietly.
+            </p>
+          </div>
+          <div className="meaning-card">
+            <h3 className="meaning-title">Passion left its mark</h3>
+            <p className="meaning-text">
+              The bite indents are intentional imperfection. Real love isn't smooth.
+            </p>
+          </div>
+          <div className="meaning-card">
+            <h3 className="meaning-title">A secret only you share</h3>
+            <p className="meaning-text">
+              The inside engraving is invisible to the world. Just like your best moments.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Engraved Card Preview */}
+      <section className="card-preview-section">
+        <div className="card-preview-content">
+          <div className="card-image">
+            <div className="metal-card">
+              <p className="card-text">
+                Love isn't always gentle.<br/>
+                Sometimes it leaves traces—<br/>
+                teeth against skin,<br/>
+                memory against time.
+              </p>
+            </div>
+          </div>
+          <div className="card-info">
+            <h2 className="section-title">Every ring tells a story.</h2>
+            <p className="card-description">
+              This one comes with yours.
+            </p>
           </div>
         </div>
       </section>
