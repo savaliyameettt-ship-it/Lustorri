@@ -414,13 +414,21 @@
   align-items: center;
 }
 
-.metal-card {
+/* Card 3D Scene Container */
+.card-scene {
   width: 400px;
   height: 280px;
+  perspective: 1500px;
+  margin: 0 auto;
+}
+
+.metal-card {
+  width: 100%;
+  height: 100%;
   position: relative;
   cursor: grab;
   transform-style: preserve-3d;
-  transition: transform 0.1s ease-out;
+  transition: transform 0.05s ease-out;
   user-select: none;
 }
 
@@ -429,24 +437,49 @@
   transition: none;
 }
 
-.card-front,
-.card-back {
+/* Card Faces */
+.card-face {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
   background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
   border: 2px solid #D4AF37;
-  padding: 3rem;
-  border-radius: 4px;
-  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+  padding: 2.5rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3),
+              inset 0 1px 1px rgba(212, 175, 55, 0.1);
+}
+
+.card-front {
+  transform: rotateY(0deg);
 }
 
 .card-back {
   transform: rotateY(180deg);
+}
+
+.card-back .card-content {
+  background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%);
+}
+
+.card-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: rgba(212, 175, 55, 0.6);
+  margin-top: 1.5rem;
+  letter-spacing: 2px;
 }
 
 .card-text {
