@@ -52,6 +52,41 @@ const BiteBand = () => {
     };
   }, []);
 
+  // Card rotation handlers
+  const handleCardMouseDown = (e) => {
+    setIsDragging(true);
+    setDragStartX(e.clientX);
+    setDragStartRotation(cardRotation);
+  };
+
+  const handleCardMouseMove = (e) => {
+    if (!isDragging) return;
+    
+    const deltaX = e.clientX - dragStartX;
+    const rotationChange = deltaX * 0.5; // Sensitivity: 0.5 degrees per pixel
+    setCardRotation(dragStartRotation + rotationChange);
+  };
+
+  const handleCardMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleCardMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  useEffect(() => {
+    if (isDragging) {
+      document.addEventListener('mousemove', handleCardMouseMove);
+      document.addEventListener('mouseup', handleCardMouseUp);
+      
+      return () => {
+        document.removeEventListener('mousemove', handleCardMouseMove);
+        document.removeEventListener('mouseup', handleCardMouseUp);
+      };
+    }
+  }, [isDragging, dragStartX, dragStartRotation]);
+
   const metalOptions = [
     { value: '14k-yellow-gold', label: '14K Yellow Gold', price: 1899 },
     { value: '14k-rose-gold', label: '14K Rose Gold', price: 1899 },
