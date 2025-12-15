@@ -324,7 +324,7 @@ const BiteBand = () => {
             <div className="card-scene">
               <div 
                 className={`card-3d-box ${isDragging ? 'card-3d-box--dragging' : ''}`}
-                style={{ transform: `rotateY(${cardRotation}deg) rotateX(-10deg)` }}
+                style={{ transform: `rotateX(${cardRotationX}deg) rotateY(${cardRotationY}deg)` }}
                 onMouseDown={handleCardMouseDown}
                 onMouseLeave={handleCardMouseLeave}
               >
