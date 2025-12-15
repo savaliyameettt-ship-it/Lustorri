@@ -475,7 +475,8 @@
   height: 30px;
   transform: rotateX(90deg) translateZ(125px);
   background: linear-gradient(90deg, #2A2A2A 0%, #1A1A1A 100%);
-  border: 1px solid #D4AF37;
+  border: none;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Bottom face */
@@ -484,7 +485,8 @@
   height: 30px;
   transform: rotateX(-90deg) translateZ(155px);
   background: linear-gradient(90deg, #1A1A1A 0%, #2A2A2A 100%);
-  border: 1px solid #D4AF37;
+  border: none;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Left face */
@@ -493,7 +495,8 @@
   height: 280px;
   transform: rotateY(-90deg) translateZ(185px);
   background: linear-gradient(180deg, #2A2A2A 0%, #1A1A1A 100%);
-  border: 1px solid #D4AF37;
+  border: none;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Right face */
@@ -502,7 +505,8 @@
   height: 280px;
   transform: rotateY(90deg) translateZ(215px);
   background: linear-gradient(180deg, #1A1A1A 0%, #2A2A2A 100%);
-  border: 1px solid #D4AF37;
+  border: none;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .card-logo {
