@@ -59,15 +59,22 @@ const BiteBand = () => {
   const handleCardMouseDown = (e) => {
     setIsDragging(true);
     setDragStartX(e.clientX);
-    setDragStartRotation(cardRotation);
+    setDragStartY(e.clientY);
+    setDragStartRotationY(cardRotationY);
+    setDragStartRotationX(cardRotationX);
   };
 
   const handleCardMouseMove = (e) => {
     if (!isDragging) return;
     
     const deltaX = e.clientX - dragStartX;
-    const rotationChange = deltaX * 0.5; // Sensitivity: 0.5 degrees per pixel
-    setCardRotation(dragStartRotation + rotationChange);
+    const deltaY = e.clientY - dragStartY;
+    
+    const rotationYChange = deltaX * 0.5; // Horizontal drag rotates Y axis
+    const rotationXChange = -deltaY * 0.5; // Vertical drag rotates X axis (negative for natural feel)
+    
+    setCardRotationY(dragStartRotationY + rotationYChange);
+    setCardRotationX(dragStartRotationX + rotationXChange);
   };
 
   const handleCardMouseUp = () => {
@@ -88,7 +95,7 @@ const BiteBand = () => {
         document.removeEventListener('mouseup', handleCardMouseUp);
       };
     }
-  }, [isDragging, dragStartX, dragStartRotation]);
+  }, [isDragging, dragStartX, dragStartY, dragStartRotationY, dragStartRotationX]);
 
   const metalOptions = [
     { value: '14k-yellow-gold', label: '14K Yellow Gold', price: 1899 },
