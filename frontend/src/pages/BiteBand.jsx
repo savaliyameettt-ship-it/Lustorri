@@ -13,10 +13,13 @@ const BiteBand = () => {
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
   
   // Card rotation state
-  const [cardRotation, setCardRotation] = useState(0);
+  const [cardRotationY, setCardRotationY] = useState(0);
+  const [cardRotationX, setCardRotationX] = useState(-10);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStartX, setDragStartX] = useState(0);
-  const [dragStartRotation, setDragStartRotation] = useState(0);
+  const [dragStartY, setDragStartY] = useState(0);
+  const [dragStartRotationY, setDragStartRotationY] = useState(0);
+  const [dragStartRotationX, setDragStartRotationX] = useState(-10);
 
   useEffect(() => {
     const handleScroll = () => {
