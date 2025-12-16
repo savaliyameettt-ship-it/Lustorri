@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, ShoppingCart } from 'lucide-react';
 import '../styles/BiteBand.css';
+import { Instagram } from 'lucide-react';
 
 const BiteBand = () => {
   const navigate = useNavigate();
@@ -13,13 +14,41 @@ const BiteBand = () => {
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
   
   // Card rotation state
-  const [cardRotationY, setCardRotationY] = useState(0);
-  const [cardRotationX, setCardRotationX] = useState(-10);
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragStartX, setDragStartX] = useState(0);
-  const [dragStartY, setDragStartY] = useState(0);
-  const [dragStartRotationY, setDragStartRotationY] = useState(0);
-  const [dragStartRotationX, setDragStartRotationX] = useState(-10);
+  // Card rotation state
+const [cardRotation, setCardRotation] = useState({ x: -10, y: 0 });
+const dragRef = useRef({
+  isDragging: false,
+  startX: 0,
+  startY: 0,
+  startRotation: { x: -10, y: 0 }
+});
+
+const handlePointerDown = (e) => {
+  e.target.setPointerCapture(e.pointerId);
+  dragRef.current = {
+    isDragging: true,
+    startX: e.clientX,
+    startY: e.clientY,
+    startRotation: { ...cardRotation }
+  };
+};
+
+const handlePointerMove = (e) => {
+  if (!dragRef.current.isDragging) return;
+  
+  const deltaX = e.clientX - dragRef.current.startX;
+  const deltaY = e.clientY - dragRef.current.startY;
+  
+  setCardRotation({
+    x: dragRef.current.startRotation.x - deltaY * 0.5,
+    y: dragRef.current.startRotation.y + deltaX * 0.5
+  });
+};
+
+const handlePointerUp = (e) => {
+  dragRef.current.isDragging = false;
+  e.target.releasePointerCapture(e.pointerId);
+};
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,47 +84,9 @@ const BiteBand = () => {
     };
   }, []);
 
-  // Card rotation handlers
-  const handleCardMouseDown = (e) => {
-    setIsDragging(true);
-    setDragStartX(e.clientX);
-    setDragStartY(e.clientY);
-    setDragStartRotationY(cardRotationY);
-    setDragStartRotationX(cardRotationX);
-  };
 
-  const handleCardMouseMove = (e) => {
-    if (!isDragging) return;
-    
-    const deltaX = e.clientX - dragStartX;
-    const deltaY = e.clientY - dragStartY;
-    
-    const rotationYChange = deltaX * 0.5; // Horizontal drag rotates Y axis
-    const rotationXChange = -deltaY * 0.5; // Vertical drag rotates X axis (negative for natural feel)
-    
-    setCardRotationY(dragStartRotationY + rotationYChange);
-    setCardRotationX(dragStartRotationX + rotationXChange);
-  };
 
-  const handleCardMouseUp = () => {
-    setIsDragging(false);
-  };
 
-  const handleCardMouseLeave = () => {
-    setIsDragging(false);
-  };
-
-  useEffect(() => {
-    if (isDragging) {
-      document.addEventListener('mousemove', handleCardMouseMove);
-      document.addEventListener('mouseup', handleCardMouseUp);
-      
-      return () => {
-        document.removeEventListener('mousemove', handleCardMouseMove);
-        document.removeEventListener('mouseup', handleCardMouseUp);
-      };
-    }
-  }, [isDragging, dragStartX, dragStartY, dragStartRotationY, dragStartRotationX]);
 
   const metalOptions = [
     { value: '14k-yellow-gold', label: '14K Yellow Gold', price: 1899 },
@@ -322,11 +313,18 @@ const BiteBand = () => {
         <div className="card-preview-content">
           <div className="card-image">
             <div className="card-scene">
+              {/* Invisible drag area - always full size */}
               <div 
-                className={`card-3d-box ${isDragging ? 'card-3d-box--dragging' : ''}`}
-                style={{ transform: `rotateX(${cardRotationX}deg) rotateY(${cardRotationY}deg)` }}
-                onMouseDown={handleCardMouseDown}
-                onMouseLeave={handleCardMouseLeave}
+                className="card-drag-overlay"
+                onPointerDown={handlePointerDown}
+                onPointerMove={handlePointerMove}
+                onPointerUp={handlePointerUp}
+                onPointerCancel={handlePointerUp}
+              />
+              
+              <div 
+                className="card-3d-box"
+                style={{ transform: `rotateX(${cardRotation.x}deg) rotateY(${cardRotation.y}deg)` }}
               >
                 {/* Front Face */}
                 <div className="box-face box-front">
@@ -346,23 +344,9 @@ const BiteBand = () => {
                   </p>
                   <div className="card-logo">Lustorri</div>
                 </div>
-                
-                {/* Top Face */}
-                <div className="box-face box-top"></div>
-                
-                {/* Bottom Face */}
-                <div className="box-face box-bottom"></div>
-                
-                {/* Left Face */}
-                <div className="box-face box-left"></div>
-                
-                {/* Right Face */}
-                <div className="box-face box-right"></div>
               </div>
             </div>
-            <p className="drag-hint">
-              Click and drag to rotate • 360°
-            </p>
+            <p className="drag-hint">Click and drag to rotate • 360°</p>
           </div>
           <div className="card-info">
             <h2 className="section-title">Every ring tells a story.</h2>
@@ -376,7 +360,11 @@ const BiteBand = () => {
       {/* Footer */}
       <footer className="bite-footer">
         <div className="footer-content">
-          <div className="footer-logo">Lustorri</div>
+          <img 
+            src="https://pub-30aaef0fec5e44b39ba9d9bd850cc6dd.r2.dev/golden%20lustorri.png" 
+            alt="Lustorri" 
+            className="footer-logo-img"
+          />
           <p className="footer-tagline">Where lust meets love.</p>
           <div className="footer-links">
             <a href="#">Shop All</a>
@@ -384,8 +372,13 @@ const BiteBand = () => {
             <a href="#">Contact</a>
           </div>
           <div className="footer-social">
-            <p>Instagram @lustorri</p>
-            <p>info@lustorri.com</p>
+            <a href="https://instagram.com/lustorri" target="_blank" rel="noopener noreferrer" className="social-link">
+              <Instagram size={18} color="#D4AF37" />
+              <span>@lustorri</span>
+            </a>
+            <a href="mailto:info@lustorri.com" className="social-link">
+              info@lustorri.com
+            </a>
           </div>
         </div>
       </footer>
