@@ -1,0 +1,102 @@
+.engraved-card {
+  padding: 8rem 3rem;
+  background: linear-gradient(135deg, #F5EDD6 0%, #FFFFF0 50%, #F5EDD6 100%);
+}
+
+.engraved-card__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.engraved-card__image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 8px 30px rgba(74, 55, 40, 0.15);
+}
+
+.engraved-card__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.engraved-card__image:hover img {
+  transform: scale(1.05);
+}
+
+.engraved-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.engraved-card__title {
+  font-family: var(--font-serif-primary);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--mocha-brown);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.engraved-card__text {
+  font-family: var(--font-serif-secondary);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--mocha-light);
+  line-height: 1.6;
+}
+
+.engraved-card__description {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--mocha-light);
+  line-height: 1.8;
+}
+
+.btn--secondary {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--champagne-gold);
+  background-color: var(--champagne-gold);
+  color: var(--ivory-white);
+  align-self: flex-start;
+}
+
+.btn--secondary:hover {
+  background-color: #C19B2E;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .engraved-card {
+    padding: 5rem 1.5rem;
+  }
+
+  .engraved-card__container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .engraved-card__title {
+    font-size: 2.5rem;
+  }
+
+  .btn--secondary {
+    width: 100%;
+  }
+}

@@ -1,0 +1,171 @@
+// Mock data for Lustorri luxury jewelry brand
+
+export const polaroidMoments = [
+  {
+    id: 1,
+    title: "I tasted forever",
+    caption: "I tasted forever.",
+    staticImage: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
+    gifImage: "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif",
+    likes: 1247,
+    productLink: "/bite-band"
+  },
+  {
+    id: 2,
+    title: "The First Confession",
+    caption: "Stay a little longer.",
+    staticImage: "https://images.unsplash.com/photo-1522556189639-b150ed9c4330?w=800&q=80",
+    gifImage: "https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif",
+    likes: 892
+  },
+  {
+    id: 3,
+    title: "The Quiet Morning",
+    caption: "Where your day begins.",
+    staticImage: "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=800&q=80",
+    gifImage: "https://media.giphy.com/media/26gsjCZpPolPr3sBy/giphy.gif",
+    likes: 2103
+  },
+  {
+    id: 4,
+    title: "The Promise Night",
+    caption: "We choose us.",
+    staticImage: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&q=80",
+    gifImage: "https://media.giphy.com/media/xUOxf8lYzSGLlGDgmY/giphy.gif",
+    likes: 3456
+  },
+  {
+    id: 5,
+    title: "The First Touch",
+    caption: "When everything changed.",
+    staticImage: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
+    gifImage: "https://media.giphy.com/media/26u4cqiYI30juCOGY/giphy.gif",
+    likes: 1689
+  },
+  {
+    id: 6,
+    title: "The Secret Smile",
+    caption: "Only for you.",
+    staticImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
+    gifImage: "https://media.giphy.com/media/3o7WTqo27pLRYxRtg4/giphy.gif",
+    likes: 978
+  },
+  {
+    id: 7,
+    title: "The Dance",
+    caption: "Our song begins.",
+    staticImage: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
+    gifImage: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
+    likes: 1534
+  }
+];
+
+export const featuredRings = [
+  {
+    id: 1,
+    name: "Story Ring I",
+    tagline: "For the night that changed everything.",
+    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80"
+  },
+  {
+    id: 2,
+    name: "Story Ring II",
+    tagline: "For the love that feels like home.",
+    image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80"
+  },
+  {
+    id: 3,
+    name: "Story Ring III",
+    tagline: "For the promise we keep making.",
+    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80"
+  },
+  {
+    id: 4,
+    name: "Story Ring IV",
+    tagline: "For the touch that said everything.",
+    image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80"
+  }
+];
+
+export const testimonials = [
+  {
+    id: 1,
+    quote: "It felt less like buying jewelry and more like saving a memory.",
+    author: "Sarah & Michael",
+    rating: 5
+  },
+  {
+    id: 2,
+    quote: "The story card made me cry. It's perfect.",
+    author: "Emma & James",
+    rating: 5
+  },
+  {
+    id: 3,
+    quote: "This isn't just a ring. It's the beginning of our forever.",
+    author: "Priya & Arjun",
+    rating: 5
+  },
+  {
+    id: 4,
+    quote: "Every time I look at it, I remember that moment.",
+    author: "Lisa & Tom",
+    rating: 5
+  }
+];
+
+export const stories = [
+  {
+    id: 1,
+    tag: "Her Side",
+    title: "The night we almost didn't say it.",
+    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&q=80&blur=20"
+  },
+  {
+    id: 2,
+    tag: "His Side",
+    title: "The morning I knew I couldn't leave.",
+    image: "https://images.unsplash.com/photo-1522556189639-b150ed9c4330?w=600&q=80&blur=20"
+  },
+  {
+    id: 3,
+    tag: "Our Night",
+    title: "The silence that said everything.",
+    image: "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=600&q=80&blur=20"
+  }
+];
+
+export const navigationLinks = [
+  { name: "Shop Rings", href: "#rings" },
+  { name: "Stories", href: "#stories" },
+  { name: "Engraved Cards", href: "#cards" },
+  { name: "About", href: "#about" },
+  { name: "Support", href: "#support" }
+];
+
+export const footerLinks = {
+  shop: [
+    { name: "All Rings", href: "#" },
+    { name: "Story Cards", href: "#" },
+    { name: "Gift Sets", href: "#" },
+    { name: "Engraving", href: "#" }
+  ],
+  about: [
+    { name: "Our Story", href: "#" },
+    { name: "Craftsmanship", href: "#" },
+    { name: "Materials", href: "#" },
+    { name: "Press", href: "#" }
+  ],
+  stories: [
+    { name: "Love Notes", href: "#" },
+    { name: "Proposals", href: "#" },
+    { name: "Anniversaries", href: "#" },
+    { name: "Submit Yours", href: "#" }
+  ],
+  support: [
+    { name: "FAQ", href: "#" },
+    { name: "Shipping", href: "#" },
+    { name: "Returns", href: "#" },
+    { name: "Contact", href: "#" }
+  ]
+};
