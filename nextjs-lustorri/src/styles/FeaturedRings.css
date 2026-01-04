@@ -1,0 +1,144 @@
+.featured-rings {
+  padding: 8rem 3rem;
+  background-color: var(--ivory-white);
+}
+
+.featured-rings__container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.section-title {
+  font-family: var(--font-serif-primary);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--mocha-brown);
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  font-family: var(--font-serif-secondary);
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--mocha-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+}
+
+.ring-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.ring-card:hover {
+  transform: translateY(-8px);
+}
+
+.ring-card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background-color: var(--champagne-wash);
+  box-shadow: 0 4px 20px rgba(74, 55, 40, 0.1);
+}
+
+.ring-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ring-card:hover .ring-card__image {
+  transform: scale(1.05);
+}
+
+.ring-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(74, 55, 40, 0.7), transparent);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ring-card:hover .ring-card__overlay {
+  opacity: 1;
+}
+
+.ring-card__cta {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ivory-white);
+  background-color: transparent;
+  border: 1px solid var(--ivory-white);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.ring-card__cta:hover {
+  background-color: var(--ivory-white);
+  color: var(--mocha-brown);
+  transform: translateY(-2px);
+}
+
+.ring-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ring-card__name {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--mocha-brown);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ring-card__tagline {
+  font-family: var(--font-serif-secondary);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--mocha-light);
+  line-height: 1.5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .featured-rings {
+    padding: 5rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .rings-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
