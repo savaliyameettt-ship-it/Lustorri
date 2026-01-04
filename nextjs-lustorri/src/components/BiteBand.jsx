@@ -110,7 +110,7 @@ const handlePointerUp = (e) => {
   return (
     <div className="bite-band">
       {/* Back Button */}
-      <button className="back-button" onClick={() => navigate('/')}>
+      <button className="back-button" onClick={() => router.push('/')}>
         <ArrowLeft size={20} />
         <span>Back to Stories</span>
       </button>
