@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState, useEffect } from 'react';
 import { Heart, ShoppingCart, User, Menu, X } from 'lucide-react';
 import { navigationLinks } from '../mock';

@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react';
 import { Instagram, Facebook, Twitter, Mail } from 'lucide-react';
 import { footerLinks } from '../mock';

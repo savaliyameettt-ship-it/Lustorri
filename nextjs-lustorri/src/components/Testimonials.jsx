@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState, useEffect } from 'react';
 import { Star } from 'lucide-react';
 import { testimonials } from '../mock';
