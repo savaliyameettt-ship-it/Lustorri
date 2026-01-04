@@ -1,13 +1,12 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { ArrowLeft, ShoppingCart } from 'lucide-react';
 import '../styles/BiteBand.css';
-import { Instagram } from 'lucide-react';
 
 const BiteBand = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [selectedMetal, setSelectedMetal] = useState('14k-yellow-gold');
   const [selectedSize, setSelectedSize] = useState('7');
   const [scrollProgress, setScrollProgress] = useState(0);
