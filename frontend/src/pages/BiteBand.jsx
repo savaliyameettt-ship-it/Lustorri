@@ -327,23 +327,40 @@ const handlePointerUp = (e) => {
                 style={{ transform: `rotateX(${cardRotation.x}deg) rotateY(${cardRotation.y}deg)` }}
               >
                 {/* Front Face */}
-                <div className="box-face box-front">
-                  <p className="card-text">
-                    Love isn't always gentle.<br/>
-                    Sometimes it leaves traces—<br/>
-                    teeth against skin,<br/>
-                    memory against time.
-                  </p>
+              <div className="box-face box-front">
+                <p 
+                  className="card-text card-text-glare"
+                  style={{
+                    backgroundPosition: `${50 + cardRotation.y * 2}% ${50 + cardRotation.x * 2}%`
+                  }}
+                >
+                  Love isn't always gentle.<br/>
+                  Sometimes it leaves traces—<br/>
+                  teeth against skin,<br/>
+                  memory against time.
+                </p>
+              </div>
+
+              {/* Back Face */}
+              <div className="box-face box-back">
+                <p 
+                  className="card-text card-text-glare"
+                  style={{
+                    backgroundPosition: `${50 + cardRotation.y * 2}% ${50 + cardRotation.x * 2}%`
+                  }}
+                >
+                  The Bite Band<br/>
+                  <span className="card-subtext">For those who crave fiercely</span>
+                </p>
+                <div 
+                  className="card-logo card-text-glare"
+                  style={{
+                    backgroundPosition: `${50 + cardRotation.y * 2}% ${50 + cardRotation.x * 2}%`
+                  }}
+                >
+                  Lustorri
                 </div>
-                
-                {/* Back Face */}
-                <div className="box-face box-back">
-                  <p className="card-text">
-                    The Bite Band<br/>
-                    <span className="card-subtext">For those who crave fiercely</span>
-                  </p>
-                  <div className="card-logo">Lustorri</div>
-                </div>
+              </div>
               </div>
             </div>
             <p className="drag-hint">Click and drag to rotate • 360°</p>

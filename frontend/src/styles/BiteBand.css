@@ -731,6 +731,73 @@
   margin-bottom: 1rem;
 }
 
+.card-text-glare {
+  background: linear-gradient(
+    135deg,
+    #D4AF37 0%,
+    #D4AF37 35%,
+    #FFF8DC 45%,
+    #FFFACD 50%,
+    #FFF8DC 55%,
+    #D4AF37 65%,
+    #D4AF37 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.1s ease-out;
+}
+
+/* Override the subtext to also have the effect */
+.card-subtext {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.8) 0%,
+    rgba(212, 175, 55, 0.8) 35%,
+    #FFF8DC 45%,
+    #FFFACD 50%,
+    #FFF8DC 55%,
+    rgba(212, 175, 55, 0.8) 65%,
+    rgba(212, 175, 55, 0.8) 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-position: inherit;
+}
+
+.card-text-glare {
+  background: linear-gradient(
+    135deg,
+    #B8960C 0%,
+    #D4AF37 30%,
+    #FFFFFF 48%,
+    #FFFFFF 52%,
+    #D4AF37 70%,
+    #B8960C 100%
+  );
+  background-size: 250% 250%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 10;
+  border-radius: inherit;
+}
+
 .footer-tagline {
   font-family: 'Playfair Display', serif;
   font-size: 1.125rem;
